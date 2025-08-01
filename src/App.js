@@ -8,33 +8,34 @@ function App() {
         <h1>
           ONE WAY TIX
         </h1>
-        <p className="subtitle">A documentary feature film, <span className="bold">10 years</span> in the making.</p>
+        <p className="subtitle">
+          A documentary feature film, <span className="bold">10 years</span> in the making.
+        </p>
       </section>
 
       <section>
         <h4>SYNOPSIS</h4>
         <p>
-          A guy buys a one way ticket to Asia <span className="bold">determined to make a documentary</span>
-          with no money, no experience, and no direction. He attempts to show that
-          travel is accesible by <span className="bold">working for food and shelter</span> but his obsession surfaces; being <span className="bold">on the run from materialism.</span>The expedition ends near the Siberian border herding cattle. Is the documentary about Jenny? The Monks? Angela, the dead piglet? Obama, the unriddeable horse in Mongolia? The Actor? The Colorado Dropout? The Deadliest Catch boat? Mysterious characters
+          A guy buys a one way ticket to Asia <span className="bold">determined to make a documentary</span> with no money, no experience, and no direction. He attempts to show that
+          travel is accesible by <span className="bold"> working for food and shelter</span> but his obsession surfaces; being <span className="bold">on the run from materialism. </span>The expedition ends near the Siberian border herding cattle. Is the documentary about Jenny? The Monks? Angela, the dead piglet? Obama, the unriddeable horse in Mongolia? The Actor? The Colorado Dropout? The Deadliest Catch boat? Mysterious characters
           appear and guide him along the way. Overwhelmed, he burries the project. <span className="bold">Six years later</span> he learns that <span className="bold">Asia was only the beginning</span> of becoming a documentary filmmaker.
         </p>
       </section>
 
       <section>
         <h4>COUNTRIES</h4>
-        <p style={{fontFamily: "Consolas, monospace", fontSize: "14px"}}>
-          <span className="highlight-alt">FRANCE</span>,
-          <span className="highlight-alt">US</span>,
-          <span className="highlight-alt">INDONESIA</span>,
-          <span className="highlight-alt">MALAYSIA</span>,
-          <span className="highlight-alt">VIET NAM</span>,
-          <span className="highlight-alt">HONG KONG</span>,
-          <span className="highlight-alt">NEPAL</span>,
-          <span className="highlight-alt">"TIBET"</span>,
-          <span className="highlight-alt">CHINA</span>,
-          <span className="highlight-alt">MONGOLIA</span>
-        </p>
+        <ul className="country-list">
+          <li><span className="highlight-alt">FRANCE</span></li>
+          <li><span className="highlight-alt">US</span></li>
+          <li><span className="highlight-alt">INDONESIA</span></li>
+          <li><span className="highlight-alt">MALAYSIA</span></li>
+          <li><span className="highlight-alt">VIET NAM</span></li>
+          <li><span className="highlight-alt">HONG KONG</span></li>
+          <li><span className="highlight-alt">NEPAL</span></li>
+          <li><span className="highlight-alt">"TIBET"</span></li>
+          <li><span className="highlight-alt">CHINA</span></li>
+          <li><span className="highlight-alt">MONGOLIA</span></li>
+        </ul>
       </section>
 
       <section>
@@ -78,8 +79,7 @@ function App() {
       </section>
 
       <section>
-        THIS PROJECT CAN BE DESCRIBED AS
-        <span className="bold highlight-alt"> GUERILLA FILMMAKING.</span>
+        THIS PROJECT CAN BE DESCRIBED AS <span className="bold highlight-alt"> GUERILLA FILMMAKING.</span>
       </section>
 
       <section>
@@ -93,9 +93,7 @@ function App() {
           <button type="submit" className="submit-button">Submit</button>
         </form>
       </div>   
-      <section>
-        <span ><a className="highlight-alt" style={{fontWeight: 400}} href="#">contact@onewaytix.film</a></span>
-      </section>
+      
     </div>
   );
 }
