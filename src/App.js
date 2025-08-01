@@ -14,12 +14,10 @@ function App() {
       <section>
         <h4>SYNOPSIS</h4>
         <p>
-          A guy buys a one way ticket to Asia
-          <span className="bold">determined to make a documentary</span>
+          A guy buys a one way ticket to Asia <span className="bold">determined to make a documentary</span>
           with no money, no experience, and no direction. He attempts to show that
-          travel is accesible by
-          <span className="bold">working for food and shelter</span> but his obsession surfaces; being <span className="bold">on the run from materialism.</span>The expedition ends near the Siberian border herding cattle. Is the documentary about Jenny? The Monks? Angela, the dead piglet? Obama, the unriddeable horse in Mongolia? The Deadliest Catch boat? Mysterious characters
-          appear and guide him along the way. Overwhelmed, he burries the project and accepts defeat. <span className="bold">Six years later</span> he learns that <span className="bold">Asia was only the beginning</span> of becoming a documentary filmmaker.
+          travel is accesible by <span className="bold">working for food and shelter</span> but his obsession surfaces; being <span className="bold">on the run from materialism.</span>The expedition ends near the Siberian border herding cattle. Is the documentary about Jenny? The Monks? Angela, the dead piglet? Obama, the unriddeable horse in Mongolia? The Actor? The Colorado Dropout? The Deadliest Catch boat? Mysterious characters
+          appear and guide him along the way. Overwhelmed, he burries the project. <span className="bold">Six years later</span> he learns that <span className="bold">Asia was only the beginning</span> of becoming a documentary filmmaker.
         </p>
       </section>
 
