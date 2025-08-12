@@ -20,7 +20,7 @@ h1 {
   font-weight: 400;
 }
 
-h4,
+h3,
 .highlight {
   background-color: black;
   color: white;
@@ -108,7 +108,7 @@ a:hover {
 
   flex-direction: column;
   justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
+  align-items: flex-start; /* align items to the left */
   text-align: center;
 
   margin-bottom: 30px;
@@ -117,6 +117,7 @@ a:hover {
 .form-header {
   margin-right: 0px;
   margin-bottom: 20px;
+  margin-top: 10px;
   font-size: 1.3rem;
   box-sizing: border-box;
   width: 100%; /* match form width */
@@ -138,12 +139,12 @@ a:hover {
   padding: 0.5em;
   box-sizing: border-box;
   font-size: 16px;
-  /* border: 1px solid black; */
   border: none;
 }
 
 .submit-button {
   background-color: yellow;
+  font-weight: bold;
   color: black;
   opacity: 0.95;
   cursor: pointer;
@@ -165,11 +166,40 @@ a:hover {
   flex-wrap: wrap;
 }
 
-/* Stack vertically on mobile */
-@media (max-width: 400px) {
+.release-notification {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/** one-off styling **/
+.geurilla {
+  display: inline-block;
+}
+
+/* mobile adjustments */
+@media (max-width: 600px) {
+  #main-header {
+    margin-top: 0;
+  }
   .email-input,
   .submit-button,
   .form-header {
     width: 100%;
   }
+  .form {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .form-header {
+    font-size: 1.2rem !important;
+  }
+  .geurilla {
+    margin-top: 0.25rem;
+    padding: 1px 4px;
+  }
+  .release {
+    padding: 3px 7px;
+  }
 }
+

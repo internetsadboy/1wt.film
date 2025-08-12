@@ -1,6 +1,54 @@
+import React, {useState} from 'react';
+
 import './App.css';
 
 function App() {
+  // I want to collect an email (string) from the user
+  const [email, setEmail] = useState('');
+  // I want to display text indicating success / failure to the user
+  const [status, setStatus] = useState(null); // For showing success/error messages
+  const [formSubmitted, setFormSubmitted] = useState(false); // To track if the form has been submitted
+
+  // I need a function to handle the "submit event"
+  // and perform an HTTP POST request to the google api
+  // in order to add two data points (date, email) to my private spreadsheet
+  const handleSubmit = async (e) => {
+    // pause the browser
+    e.preventDefault();
+
+    // compute the date for PST
+    const date = new Date().toLocaleDateString('en-CA', {
+                    timeZone: 'America/Los_Angeles',
+                  });
+     
+    // send request or catch error
+    try {
+      // hit "sheetserver" with a POST request
+      const res = await fetch(' http://164.90.148.242:3000/submit', {
+        method: 'POST',
+        body: JSON.stringify({
+          date: date,
+          email: email,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      
+      if (res.ok) {
+        setFormSubmitted(true);
+        // http status = 200
+        setStatus('You\'ll be notified when the film is released!');
+        console.log(`Email submitted: ${email} on ${date}`);
+        // reset form value to empty string
+        setEmail('');
+      } else {
+        setStatus(`Submission failed. Please try again.`);
+      }
+    } catch (err) {
+      // display error
+      setStatus(`Error: ${err.message}`);
+    }
+  };
+
   return (
     <div className="App">
       <section id="yellow-bar"></section>
@@ -14,7 +62,7 @@ function App() {
       </section>
 
       <section>
-        <h4>SYNOPSIS</h4>
+        <h3>SYNOPSIS</h3>
         <p>
           A guy buys a one way ticket to Asia <span className="bold">determined to make a documentary</span> with no money, no experience, and no direction. He attempts to show that
           travel is accesible by <span className="bold"> working for food and shelter</span> but his obsession surfaces; being <span className="bold">on the run from materialism. </span>The expedition ends near the Siberian border herding cattle. Is the documentary about Jenny? The Monks? Angela, the dead piglet? Obama, the unriddeable horse in Mongolia? The Actor? The Colorado Dropout? The Deadliest Catch boat? Mysterious characters
@@ -23,7 +71,7 @@ function App() {
       </section>
 
       <section>
-        <h4>COUNTRIES</h4>
+        <h3>COUNTRIES</h3>
         <ul className="country-list">
           <li><span className="highlight-alt">FRANCE</span></li>
           <li><span className="highlight-alt">US</span></li>
@@ -39,7 +87,7 @@ function App() {
       </section>
 
       <section>
-        <h4>TRAILER</h4>
+        <h3>TRAILER</h3>
         <div style={{padding: "56.25% 0 0 0", position: "relative"}}>
           <iframe
             src="https://player.vimeo.com/video/1083081464?title=0&byline=0&portrait=0&badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
@@ -53,7 +101,7 @@ function App() {
       </section>
 
       <section>
-        <h4>THEMES</h4>
+        <h3>THEMES</h3>
         <ul>
           <li>Escaping Materialism</li>
           <li>Animal Consumption</li>
@@ -70,7 +118,7 @@ function App() {
       <section>
         <p>
           <span className="highlight"> ANTICIPATED RELEASE </span>
-          <span className="highlight-alt">Jan 22, 2026.</span>
+          <span className="release highlight-alt">Jan 22, 2026</span>
         </p>
         <p>
           Now in <span className="italic bold">post-production</span>, One Way Tix is
@@ -79,7 +127,7 @@ function App() {
       </section>
 
       <section>
-        THIS PROJECT CAN BE DESCRIBED AS <span className="bold highlight-alt"> GUERILLA FILMMAKING.</span>
+        <span>THIS PROJECT CAN BE DESCRIBED AS</span> <span className="geurilla bold highlight-alt"> GUERILLA FILMMAKING</span>
       </section>
 
       <section>
@@ -87,13 +135,24 @@ function App() {
       </section>
 
       <div className="form-container">
-        <h2 className="form-header highlight">Get notified when the film is released!</h2>
-        <form className="form">
-          <input type="email" placeholder="Enter your email" className="email-input" />
-          <button type="submit" className="submit-button">Submit</button>
-        </form>
-      </div>   
-      
+         {status && <p className="release-notification highlight">{status}</p>}
+         {!formSubmitted && (
+             <div style={{width: "100%"}}>
+              <h2 className="form-header highlight">Get notified when the film is released!</h2>
+              <form onSubmit={handleSubmit} className="form" id="emailForm">
+                <input
+                  type="email"
+                  value={email}
+                  id="email"
+                  required
+                  placeholder="Enter your email"
+                  className="email-input"
+                  onChange={(e) => setEmail(e.target.value)} />
+                <button type="submit" className="submit-button">Submit</button>
+              </form>
+            </div>
+          )}
+      </div>
     </div>
   );
 }
