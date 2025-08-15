@@ -1,7 +1,8 @@
 # Todo
 This will be used to track dev workflow for 1wt.film
 
-### Next Deploy (Aug 14 2025)
+### Next Deploy (Aug 17 2025)
+[ ] UI: make error message have red bkgrnd
 [ ] check to see if email has already been added
 [ ] add new message for existing email
 
@@ -9,6 +10,11 @@ This will be used to track dev workflow for 1wt.film
 [ ] email jl90 of new user subscription via email
 [ ] verify email (this would ensure emails added are correct)
 [ ] longevity: create "EmailForm.js" component (abstract out form)
+
+### Done (Aug 15 2025) 
+[x] make sheets service https (nginx / ssl cert)
+[x] create A Record for `api.onewaytix.film`
+[x] update fetch call w/ new url
 
 ### Done (Aug 12 2025)
 [x] feature: submit email and date to spreadsheet
