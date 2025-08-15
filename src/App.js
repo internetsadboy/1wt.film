@@ -24,7 +24,7 @@ function App() {
     // send request or catch error
     try {
       // hit "sheetserver" with a POST request
-      const res = await fetch(' http://164.90.148.242:3000/submit', {
+      const res = await fetch('https://api.onewaytix.film/submit', {
         method: 'POST',
         body: JSON.stringify({
           date: date,
