@@ -63,7 +63,7 @@ function App() {
           ONE WAY TIX
         </h1>
         <p className="subtitle">
-          A documentary feature film, <span className="bold">10 years</span> in the making.
+          A documentary feature film <span className="bold">10 years</span> in the making.
         </p>
       </section>
 
