@@ -51,7 +51,7 @@ function App() {
     } catch (err) {
       // display error
       setHasError(true);
-      setStatus(`Error: ${err.message}`);
+      setStatus(`${err.message}`);
     }
   };
 
