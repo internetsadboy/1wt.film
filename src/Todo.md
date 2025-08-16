@@ -11,17 +11,17 @@ This will be used to track dev workflow for 1wt.film
 - [ ] verify email (this would ensure emails added are correct)
 - [ ] longevity: create "EmailForm.js" component (abstract out form)
 
-### Done (Aug 15 2025) 
+### Aug 15 2025
 - [x] make sheets service https (nginx / ssl cert)
 - [x] create A Record for `api.onewaytix.film`
 - [x] update fetch call w/ new url
 
-### Done (Aug 12 2025)
+### Aug 12 2025
 - [x] feature: submit email and date to spreadsheet
 - [x] UI: hide form upon successful submission
 - [x] UI: stack form inputs for mobile
 
-### Done (Aug 5 2025)
+### Aug 5 2025
 - [x] setup cra boilerplate
 - [x] transfer current html/css
 - [x] add email form (for release notification)
