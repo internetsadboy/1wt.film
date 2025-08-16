@@ -141,7 +141,7 @@ function App() {
       </section>
 
       <div className="form-container">
-        {status && !hasError && <p className={`release-notification highlight`}>{status}</p>}
+        {status && !hasError && <p className={`release-notification`}>{status}</p>}
          {!formSubmitted && (
              <div style={{width: "100%"}}>
               <h2 className="form-header highlight">Get notified when the film is released!</h2>
