@@ -177,6 +177,18 @@ a:hover {
   display: inline-block;
 }
 
+.error-msg {
+  background-color: red;
+  color: white;
+  padding: 0.5em;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 25px;
+  text-align: left;
+  padding-left: 12px;
+  letter-spacing: 0.5px;
+}
+
 /* mobile adjustments */
 @media (max-width: 600px) {
   #main-header {
@@ -184,6 +196,7 @@ a:hover {
   }
   .email-input,
   .submit-button,
+  .error-msg
   .form-header {
     width: 100%;
   }
@@ -200,6 +213,10 @@ a:hover {
   }
   .release {
     padding: 3px 7px;
+  }
+  .error-msg {
+    width: auto;
+    margin-top: 0;
   }
 }
 

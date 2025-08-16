@@ -5,6 +5,7 @@ import './App.css';
 function App() {
   // I want to collect an email (string) from the user
   const [email, setEmail] = useState('');
+  const [hasError, setHasError] = useState(false); // To track if there's an error in the form submission
   // I want to display text indicating success / failure to the user
   const [status, setStatus] = useState(null); // For showing success/error messages
   const [formSubmitted, setFormSubmitted] = useState(false); // To track if the form has been submitted
@@ -35,16 +36,21 @@ function App() {
       
       if (res.ok) {
         setFormSubmitted(true);
-        // http status = 200
         setStatus('You\'ll be notified when the film is released!');
         console.log(`Email submitted: ${email} on ${date}`);
+       
         // reset form value to empty string
         setEmail('');
+     
+        // reset error state
+        if (hasError) setHasError(false);
       } else {
-        setStatus(`Submission failed. Please try again.`);
+        setHasError(true);
+        setStatus(`Submission failed`);
       }
     } catch (err) {
       // display error
+      setHasError(true);
       setStatus(`Error: ${err.message}`);
     }
   };
@@ -135,7 +141,7 @@ function App() {
       </section>
 
       <div className="form-container">
-         {status && <p className="release-notification highlight">{status}</p>}
+        {status && !hasError && <p className={`release-notification highlight`}>{status}</p>}
          {!formSubmitted && (
              <div style={{width: "100%"}}>
               <h2 className="form-header highlight">Get notified when the film is released!</h2>
@@ -149,6 +155,7 @@ function App() {
                   className="email-input"
                   onChange={(e) => setEmail(e.target.value)} />
                 <button type="submit" className="submit-button">Submit</button>
+                {hasError && <p className="error-msg">Error: {status}</p>}
               </form>
             </div>
           )}
